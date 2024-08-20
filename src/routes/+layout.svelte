@@ -2,6 +2,7 @@
     import Transition from "../components/transition.svelte";
     import Header from "../components/header.svelte";
     import '../app.css'
+	import 'katex/dist/katex.min.css'
 	export let data
 </script>
 

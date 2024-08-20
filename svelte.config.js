@@ -1,5 +1,7 @@
 import adapter from '@sveltejs/adapter-auto';
 import {escapeSvelte, mdsvex} from 'mdsvex';
+import rehypeKatexSvelte from 'rehype-katex-svelte';
+import remarkMath from 'remark-math';
 import { createHighlighter } from 'shiki';
 
 const mdsvexOptions = {
@@ -15,6 +17,8 @@ const mdsvexOptions = {
 			return `{@html \`${html}\` }`
 		}
 	},
+	remarkPlugins:[remarkMath],
+	rehypePlugins:[rehypeKatexSvelte]
 };
 /** @type {import('@sveltejs/kit').Config} */
 const config = {

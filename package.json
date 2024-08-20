@@ -32,8 +32,11 @@
 	"dependencies": {
 		"@fontsource/jetbrains-mono": "^5.0.20",
 		"@fontsource/manrope": "^5.0.20",
+		"katex": "^0.16.11",
 		"lucide-svelte": "^0.427.0",
 		"open-props": "^1.7.5",
+		"rehype-katex-svelte": "^1.2.0",
+		"remark-math": "^3.0.0",
 		"shiki": "^1.13.0"
 	}
 }
