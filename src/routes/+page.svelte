@@ -51,7 +51,7 @@
 	.posts {
 		display: grid;
 		gap: var(--size-3);
-		grid-template-columns: repeat(4,2fr);
+		grid-template-columns: repeat(3,2fr);
 		grid-template-rows: repeat(3,2fr);
 		width: 100%;
 		height: 100%;

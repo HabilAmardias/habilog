@@ -19,6 +19,7 @@ html {
     --surface-4-light: var(--gray-3);
     --surface-shadow-light: var(--gray-8-hsl);
     --shadow-strength-light: 2%;
+    --spacing-64: 6.4rem;
 }
 
 :root {
@@ -34,6 +35,7 @@ html {
     --surface-4: var(--surface-4-light);
     --surface-shadow: var(--surface-shadow-light);
     --shadow-strength: var(--shadow-strength-light);
+    --spacing-64: 6.4rem;
 }
 
 
@@ -49,6 +51,7 @@ html {
     --surface-4: var(--surface-4-light);
     --surface-shadow: var(--surface-shadow-light);
     --shadow-strength: var(--shadow-strength-light);
+    --spacing-64: 6.4rem;
   }
 
 html {

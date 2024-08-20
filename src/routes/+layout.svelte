@@ -1,6 +1,7 @@
 <script>
     import Transition from "../components/transition.svelte";
     import Header from "../components/header.svelte";
+	import Footer from "../components/footer.svelte";
     import '../app.css'
 	import 'katex/dist/katex.min.css'
 	export let data
@@ -13,6 +14,7 @@
 			<slot/>
 		</Transition>
     </main>
+	<Footer/>
 </div>
 
 <style>
@@ -23,11 +25,13 @@
 		grid-template-rows: auto 1fr auto;
 		margin-inline: auto;
 		padding-inline: var(--size-7);
+		box-sizing: border-box;
 	}
 
 	main {
 		padding-block: var(--size-3);
 		display: flex;
+		box-sizing: border-box;
 	}
 
 	@media (min-width: 1440px) {

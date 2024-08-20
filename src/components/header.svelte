@@ -78,7 +78,7 @@
 		color: var(--brand-light);
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 1024px) {
 		nav {
 			display: flex;
 			align-items: center;
