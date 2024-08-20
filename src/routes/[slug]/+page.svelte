@@ -37,7 +37,7 @@
 		border-radius: var(--radius-round);
 	}
     article{
-        width: 60%;
+        width: 80%;
     }
     h1{
         margin-bottom: 0;
@@ -51,7 +51,13 @@
     }
     @media(max-width:820px){
         article{
-            width: 75%;
+            width: 90%;
+        }
+    }
+
+    @media(max-width:512px){
+        article{
+            width: 100%;
         }
     }
 </style>
