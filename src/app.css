@@ -20,6 +20,8 @@ html {
     --surface-shadow-light: var(--gray-8-hsl);
     --shadow-strength-light: 2%;
     --spacing-64: 6.4rem;
+    --spacing-24: 2.4rem;
+    --font-24: 2.4rem;
 }
 
 :root {
@@ -36,6 +38,8 @@ html {
     --surface-shadow: var(--surface-shadow-light);
     --shadow-strength: var(--shadow-strength-light);
     --spacing-64: 6.4rem;
+    --spacing-24: 2.4rem;
+    --font-24: 2.4rem;
 }
 
 
@@ -52,6 +56,8 @@ html {
     --surface-shadow: var(--surface-shadow-light);
     --shadow-strength: var(--shadow-strength-light);
     --spacing-64: 6.4rem;
+    --spacing-24: 2.4rem;
+    --font-24: 2.4rem;
   }
 
 html {
@@ -111,18 +117,23 @@ pre{
   display: flex;
   justify-content: center;
 }
+
 p:has(>img){
   display: flex;
   justify-content: center;
 }
-h1{
-  font-size: var(--font-size-6);
+
+h1,h2{
+  font-size: var(--font-24);
+  font-weight: var(--font-weight-7);
 }
+
 h2{
-  font-weight: var(--font-weight-5);
+  margin-top: var(--spacing-64);
+  margin-bottom: var(--spacing-24);
   color: var(--brand-light);
-  text-align: center;
 }
+
 p{
   text-align: justify;
 }

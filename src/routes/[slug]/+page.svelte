@@ -13,7 +13,7 @@
 <article>
     <section>
         <h1>{data.metadata.title}</h1>
-        <p class="date">{formatDate(data.metadata.date,'medium','en')}</p>
+        <p class="date">{formatDate(data.metadata.date)}</p>
     </section>
     <section class="tags">
         {#each data.metadata.tags as tag}
@@ -41,12 +41,11 @@
     }
     h1{
         margin-bottom: 0;
-        font-weight: var(--font-weight-9);
         color: var(--brand-light);
     }
     span{
-        background-color: var(--gray-6);
-        color: white;
+        background-color: var(--gray-8);
+        color: var(--brand-light);
         font-size: var(--size-3);
     }
     @media(max-width:820px){

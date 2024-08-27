@@ -1,6 +1,6 @@
-export function formatDate(date, dateStyle, locales) {
+export function formatDate(date) {
 	const dateToFormat = new Date(date.replaceAll('-', '/'))
-	const dateFormatter = new Intl.DateTimeFormat(locales, { dateStyle })
+	const dateFormatter = new Intl.DateTimeFormat('en', { dateStyle:'medium' })
 	return dateFormatter.format(dateToFormat)
 }
 

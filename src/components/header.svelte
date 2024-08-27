@@ -5,7 +5,9 @@
 	let isSticky=false
 	onMount(()=>{
 		const scrollHandler=()=>{
-			isSticky=window.scrollY>0
+			const navbar = document.querySelector('nav')
+			const sticky = navbar?.offsetTop
+			isSticky=sticky ? window.scrollY > sticky : window.scrollY > 0
 		}
 		scrollHandler()
 		window.addEventListener('scroll',scrollHandler)
