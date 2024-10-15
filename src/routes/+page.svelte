@@ -59,7 +59,7 @@
 
 	.post {
 		max-inline-size: var(--size-content-3);
-		background: var(--surface-1);
+		background-color: #fff;
 		border: 1px solid var(--surface-1);
 		padding: var(--size-2);
 		border-radius: var(--radius-3);
