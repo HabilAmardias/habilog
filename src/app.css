@@ -145,6 +145,8 @@ p{
   text-align: justify;
 }
 
-code{
-  width: 100%;
+@media(max-width:768px){
+  code{
+    width: 100%;
+  }
 }
