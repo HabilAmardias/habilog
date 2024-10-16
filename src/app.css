@@ -144,3 +144,7 @@ h2{
 p{
   text-align: justify;
 }
+
+code{
+  width: 100%;
+}

@@ -35,10 +35,9 @@
 		box-sizing: border-box;
 	}
 
-	@media (min-width: 1440px) {
-		.layout {
-			padding-inline: 0;
+	@media(max-width:768px){
+		main{
+			width: 80vw;
 		}
 	}
-
 </style>
