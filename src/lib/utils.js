@@ -6,8 +6,8 @@ export function formatDate(date) {
 
 export function paginate(data) {
 	const pages = [];
-	for (let i = 0; i < data.length; i += 9) {
-	  pages.push(data.slice(i, i + 9));
+	for (let i = 0; i < data.length; i += 8) {
+	  pages.push(data.slice(i, i + 8));
 	}
 	return pages;
   }
