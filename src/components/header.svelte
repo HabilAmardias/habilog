@@ -49,8 +49,8 @@
 		background-color: var(--gray-8);
 		border-radius: var(--radius-3);
 		padding-inline: var(--size-3);
-		width: 500px;
-		height: 80px;
+		width: 400px;
+		height: 50px;
 		justify-self: center;
 		box-sizing: border-box;
 		display: flex;
@@ -61,7 +61,6 @@
 		position: fixed;
 		top: 0;
 		z-index: 100;
-		width: 500px;
 	}
 
 	.links {
@@ -79,31 +78,9 @@
 	a:hover{
 		color: var(--brand-light);
 	}
-
-	@media (min-width: 1024px) {
-		nav {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			width: 700px;
-			padding-block: var(--size-3);
-		}
-
-		.links {
-			display: flex;
-			gap: var(--size-3);
-			margin-block: 0;
-		}
-
-		.sticky{
-			width: 700px;
-		}
-	}
-
 	@media(max-width:576px){
 		nav, .sticky{
 			width: 300px;
-			height: 50px;
 		}
 	}
 </style>
