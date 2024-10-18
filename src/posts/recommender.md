@@ -1,6 +1,6 @@
 ---
 title: Recommender System Overview
-desc: Things I Learned about Recommender System
+desc: Things I learned about recommender system
 date: '2024-10-16'
 tags:
     - Recommender System
