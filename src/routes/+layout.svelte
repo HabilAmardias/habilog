@@ -22,7 +22,7 @@
 		height: 100%;
 		max-inline-size: 1440px;
 		display: grid;
-		grid-template-rows: repeat(3,1fr);
+		grid-template-rows: 1fr 6fr 1fr;
 		margin-inline: auto;
 		padding-inline: var(--size-7);
 		box-sizing: border-box;
