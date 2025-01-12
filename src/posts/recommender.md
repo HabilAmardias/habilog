@@ -16,7 +16,7 @@ It’s commonly used in online service providers such as e-commerce, streaming s
 Recommender system can reduce user effort to finding items they preferred which can affect user satisfaction, indirectly add business value to online service providers. 
 In general, before recommender system provice recommendation, users have to give some kind of review or feedback to a product or service and then retrieved by recommender system as input to give recommendation to users based on those feedback.
 
-![Recommender System](recommender_system.png)
+![Recommender System](https://www.mdpi.com/applsci/applsci-10-05510/article_deploy/html/images/applsci-10-05510-g001.png)
 *Illustration of Recommender System (Ferreira, 2020)*
 
 ## Feedback
@@ -24,25 +24,31 @@ In general, before recommender system provice recommendation, users have to give
 Recommender system need user feedbacks to give recommendation, there are 2 type of feedbacks used for recommender system;
 
 
-- **Explicit Feedback**, is a rating explicitly given by users to express their satisfaction with an item, for example numbers of stars after buying a product, like or dislike after watching a video, etc. 
+- **Explicit Feedback**
+
+is a rating explicitly given by users to express their satisfaction with an item, for example numbers of stars after buying a product, like or dislike after watching a video, etc. 
 Note that this feedback provides detailed information, but it is hard to collect as most users typically don’t give an explicit rating for each item
 
 
-- **Implicit Feedback**, is mainly concerned with user-item interactions, for example purchases history, browsing history, list of songs played by a user, user clicks, etc. 
+- **Implicit Feedback**
+
+is mainly concerned with user-item interactions, for example purchases history, browsing history, list of songs played by a user, user clicks, etc. 
 The advantage of implicit feedback is often readily available. However, this feedback is less detailed compared to explicit feedback and noisier, for example a user may buy a product for someone else.
 
 
 Once the system collected explicit/implicit feedback, the system can create interaction matrix $R\in \mathbb{R}^{m×n}$ with $m$ users and $n$ items, and the entry of $R$, $r_{ui}\in \mathbb{R}$, 
 represent quantified feedback from user $i$ for item $j$.
 
-![Interaction Matrix](interaction_matrix.webp)
+![Interaction Matrix](https://miro.medium.com/v2/resize:fit:4800/format:webp/1*k4UGbxNRZwyqnFCl3lxXcA.png)
 *Source: [Recommender Systems — A Complete Guide to Machine Learning Models](https://tinyurl.com/3vbp8akr)*
 
 ## Approach
 
 There are 3 main types of recommender system;
 
-- **Content-based Filtering** rely on the description of an item and a user's profile to make suggestions. Each item, such as a movie or book, 
+- **Content-based Filtering**
+
+Content-based Filtering approach rely on the description of an item and a user's profile to make suggestions. Each item, such as a movie or book, 
 is characterized by a set of tags, while each user is represented by a profile based on their preferences and past behavior (e.g., previously watched movies). 
 For instance, if a user has watched or is currently exploring a specific movie, the system will recommend other similar titles.
 However note that since this approach bases its recommendations on the user's past behavior, it may recommend similar items over and over, limiting diversity in the recommendations (over-specialization).
@@ -124,13 +130,15 @@ print('Recommendation list for user 5 with Content-Based Filtering: ',
       cb_get_recommendation(ratings,titles,tfidf_matrix,user_id=5,min_rating=3,n_recs=3))
 ```
 
-- **Collaborative Filtering** takes a different approach to recommendations by focusing on user activity and feedback rather than relying on item features or individual user profiles. This method predicts how a user will rate or engage with a particular item by analyzing the interactions of all users, uncovering patterns and interdependencies between users and items based on shared behaviors.
+- **Collaborative Filtering**
+
+Collaborative Filtering approach focusing on user activity and feedback rather than relying on item features or individual user profiles. This method predicts how a user will rate or engage with a particular item by analyzing the interactions of all users, uncovering patterns and interdependencies between users and items based on shared behaviors.
 
 However, collaborative filtering has its challenges. It struggles in "cold-start" situations, such as when new users or items are introduced to the platform with little or no interaction data. Additionally, issues like scalability and data sparsity can affect its performance, particularly when dealing with large datasets with few interactions.
 
 One of the most popular techniques in this approach is Matrix Factorization, which helps to break down user-item interactions into latent factors, enabling more accurate predictions. Let $R \in \mathbb{R}^{m \times n}$ is interaction matrix with $m$ users and $n$ items, its entry, $r_{ui} \in R$, is quantified feedback from user $u$ for item $i$, matrix factorization goal is to factorize interaction matrix into user latent matrix $P \in \mathbb{R}^{m \times k}$ and item latent matrix $Q \in \mathbb{R}^{n \times k}$ with $k$ is latent factor, or we can say that we want to find $p_u$, $q_i$, $b_u$ and $b_i$ such that
 
-$$argmin_{p_u,q_i,b_u,b_i}\sum_{(u,i) \in K}[(r_{ui}-\hat{r}_{ui})^2+\lambda(\left \lVert p_u \right \rVert _2^2 + \left \lVert q_i \right \rVert _2^2 + b_u^2 +b_i^2)],
+$$\underset{p_u,q_i,b_u,b_i}{\operatorname{argmin}}\sum_{(u,i) \in K}[(r_{ui}-\hat{r}_{ui})^2+\lambda(\left \lVert p_u \right \rVert _2^2 + \left \lVert q_i \right \rVert _2^2 + b_u^2 +b_i^2)],
 $$
 
 $$\hat{r}_{ui} = p_u.q_i + b_u +b_i,
@@ -224,13 +232,15 @@ $$
 
 where $\alpha \in \mathbb{R}$ is rate of confidence increase. By introducing these new terms, the objective function for implicit feedback also changes a bit
 
-$$argmin_{p_u,q_i,b_u,b_i}\sum_{(u,i) \in K}[c_{ui}(r_{ui}-\hat{r}_{ui})^2+\lambda(\left \lVert p_u \right \rVert _2^2 + \left \lVert q_i \right \rVert _2^2 + b_u^2 +b_i^2)],
+$$\underset{p_u,q_i,b_u,b_i}{\operatorname{argmin}}\sum_{(u,i) \in K}[c_{ui}(r_{ui}-\hat{r}_{ui})^2+\lambda(\left \lVert p_u \right \rVert _2^2 + \left \lVert q_i \right \rVert _2^2 + b_u^2 +b_i^2)],
 $$
 
 There are other algorithms for this approach, for example AutoRec (Sedhain et al., 2015) that use AutoEncoder Neural Network architecture to reconstruct item/user partially observed vector, and there is also Neural Collaborative Filtering with Bayesian Personalized Ranking Loss (Pairwise Learning) (He et al., 2017).
 
 
-- **Hybrid**, this approach combines advantages of both Content-Based and Collaborative Filtering methods and allows them to obtain the best results. There are several types of this approach, one of them is Cascade Hybrid. Cascade Hybrid filters the output of one recommender using another recommender. For example, content-based filtering could first generate a broad list of recommendations, 
+- **Hybrid**
+
+This approach combines advantages of both Content-Based and Collaborative Filtering methods and allows them to obtain the best results. There are several types of this approach, one of them is Cascade Hybrid. Cascade Hybrid filters the output of one recommender using another recommender. For example, content-based filtering could first generate a broad list of recommendations, 
 and collaborative filtering could then rank or refine those recommendations.
 
 ```python

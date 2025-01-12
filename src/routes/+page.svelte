@@ -59,8 +59,8 @@
 
 	.post {
 		max-inline-size: var(--size-content-3);
-		background-color: #fff;
-		border: 1px solid var(--surface-1);
+		background-color: var(--surface-3);
+		border: 1px solid var(--surface-3);
 		padding: var(--size-2);
 		border-radius: var(--radius-3);
 		box-shadow: var(--shadow-2);
@@ -73,25 +73,24 @@
 	
 	.post:hover{
 		box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-		border-color: var(--brand-light);
+		border-color: var(--brand);
 	}
 
 	.title {
 		font-size: var(--font-size-fluid-1);
 		text-transform: capitalize;
-		color: var(--brand-light);
-		
+		color: var(--brand);
 	}
 
 	.date {
-		color: var(--text-2);
+		color: var(--text-1);
 		font-size: var(--size-3);
 	}
 
 	.description {
 		margin-top: var(--size-3);
 		font-size: var(--size-3);
-		color: var(--text-1-light);
+		color: var(--text-1);
 	}
 
 	.paginate{
@@ -102,27 +101,30 @@
 	}
 
 	.paginate>button{
-		background-color: white;
 		padding-inline: var(--size-3);
 		padding-block: var(--size-2);
 		border-radius: var(--radius-3);
+		border-color: var(--surface-3);
+		background-color: var(--surface-3);
+		color: var(--text-3);
 	}
 
 	.paginate>button:hover{
-		background-color:var(--brand-light);
-		color: white;
-		
+		background-color:var(--brand);
+		border-color: var(--brand);
+		color: var(--brand);
 	}
 
 	.paginate>button.active{
-		background-color: var(--brand-light);
-		color: white;
+		background-color: var(--brand);
+		color: var(--text-3);
 	}
 
 	.paginate>button:disabled{
 		cursor: not-allowed;
 		background: transparent;
 		border: none;
+		color: var(--surface-4);
 	}
 
 	

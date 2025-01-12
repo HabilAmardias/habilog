@@ -1,22 +1,8 @@
 <script>
     import * as config from '$lib/config';
 	import { Linkedin, Github } from 'lucide-svelte';
-	import { onMount } from 'svelte';
-	let isSticky=false
-	onMount(()=>{
-		const scrollHandler=()=>{
-			const navbar = document.querySelector('nav')
-			const sticky = navbar?.offsetTop
-			isSticky=sticky ? window.scrollY > sticky : window.scrollY > 0
-		}
-		scrollHandler()
-		window.addEventListener('scroll',scrollHandler)
-		return ()=>{
-			window.removeEventListener('scroll',scrollHandler)
-		}
-	})
 </script>
-<nav class:sticky={isSticky}>
+<nav class="nav">
     <a href="/" class="title">{config.title}</a>
     <ul class="links">
         <li>
@@ -34,19 +20,19 @@
 
 <style>
 	.title{
-		color: var(--brand-light);
+		color: var(--brand);
 		font-size: var(--font-size-3);
 		text-decoration: none;
 		font-weight: var(--font-weight-7);
 	}
 	.title:hover{
-		color: var(--gray-3)
+		color: var(--text-2)
 	}
     nav {
 		padding-block: var(--size-1);
-		border-bottom: 1px solid var(--surface-4);
+		border-bottom: 1px solid var(--surface-3);
 		margin-block: var(--size-3);
-		background-color: var(--gray-8);
+		background-color: var(--surface-3);
 		border-radius: var(--radius-3);
 		padding-inline: var(--size-3);
 		width: 400px;
@@ -57,12 +43,6 @@
 		justify-content: space-between;
 		align-items: center;
 	}
-	.sticky {
-		position: fixed;
-		top: 0;
-		z-index: 100;
-	}
-
 	.links {
 		margin-block: var(--size-7);
 		display: flex;
@@ -76,10 +56,10 @@
 	}
 
 	a:hover{
-		color: var(--brand-light);
+		color: var(--brand);
 	}
 	@media(max-width:576px){
-		nav, .sticky{
+		nav{
 			width: 300px;
 		}
 	}

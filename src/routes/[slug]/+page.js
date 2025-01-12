@@ -1,4 +1,6 @@
 import { error } from "@sveltejs/kit";
+
+/**@type {import("./$types").PageLoad} */
 export async function load({ params }) {
     try{
         const res = await import(`../../posts/${params.slug}.md`)

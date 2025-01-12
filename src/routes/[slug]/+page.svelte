@@ -35,25 +35,19 @@
     .tags > * {
 		padding: var(--size-2) var(--size-3);
 		border-radius: var(--radius-round);
+        background-color: var(--surface-3);
 	}
     article{
         width: 80%;
     }
     h1{
         margin-bottom: 0;
-        color: var(--brand-light);
-    }
-    span{
-        background-color: var(--gray-8);
-        color: var(--brand-light);
-        font-size: var(--size-3);
     }
     @media(max-width:820px){
         article{
             width: 90%;
         }
     }
-
     @media(max-width:512px){
         article{
             width: 100%;
