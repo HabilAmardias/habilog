@@ -84,9 +84,7 @@ b_{0,n}(t_2) & b_{1,n}(t_2) & \dots & b_{n,n}(t_2)\\
 \dots & \dots & \dots & \dots\\
 b_{0,n}(t_m) & b_{1,n}(t_m) & \dots & b_{n,n}(t_m)\\
 \end{bmatrix},
-$$
 
-$$
 \mathbf{P} = 
 \begin{bmatrix}
 P_0\\
